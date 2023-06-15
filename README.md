@@ -3,8 +3,10 @@ A browser extension to automatically redirect to wayback machine if subreddit is
 
 ## Installation
 
-- Chrome: Web Store (Awaiting review)
-- Firefox: Add-ons (Awaiting review)
+|Chrome|Firefox|
+|:---:|:---:|
+|<img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Google_Chrome_icon_%28February_2022%29.svg" height="64">|<img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Firefox_logo%2C_2019.svg" width="64">|
+|`Awaiting review`|`Awaiting review`|
 
 ## Manual installation
 
