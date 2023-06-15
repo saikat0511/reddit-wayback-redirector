@@ -6,7 +6,8 @@
          "run_at": "document_start"
       }
    ],
-   "manifest_version": 3,
+   "permissions": [ "https://archive.org/wayback/available" ],
+   "manifest_version": 2,
    "name": "Reddit Wayback Machine Redirector",
    "short_name": "Reddit Wayback Redirector",
    "version": "1.0.0",
