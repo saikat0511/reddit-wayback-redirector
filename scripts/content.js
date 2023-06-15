@@ -28,26 +28,31 @@ const isPrivate = () => {
 }
 
 
-const start = () => {
-  if (!isCommentPage() || !isPrivate()) return;//console.log('not a private comment page');
-  console.log('starting redirection');
+let urlArr = [];
+urlArr.push(`https://archive.org/wayback/available?url=${window.location.href}`);
+urlArr.push(`https://archive.org/wayback/available?url=${window.location.href.replace('www', 'old')}`);
 
-  let arr = [];
-  arr.push(`https://archive.org/wayback/available?url=${window.location.href}`);
-  arr.push(`https://archive.org/wayback/available?url=${window.location.href.replace('www', 'old')}`);
+// TODO: 1. (DONE) check both www and old URLs
+//       2. (DONE) redirect to newer snapshot between the two
+//       3. if both not available display a message
+Promise.all(urlArr.map(url =>
+  fetch(url).then(resp => resp.json())
+)).then(objects => {
+  let latestTimestamp = 0;
+  let latestURL = '';
+  objects.forEach(obj => {
+    if (Object.keys(obj.archived_snapshots).length !== 0) {
+      if (obj.archived_snapshots.closest.timestamp > latestTimestamp) {
+        latestTimestamp = obj.archived_snapshots.closest.timestamp;
+        latestURL = obj.archived_snapshots.closest.url;
+      }
+    }
+  });
 
-  // TODO: 1. check both www and old URLs
-  //       2. redirect to newer snapshot between the two
-  //       3. if both not available don't redirect and display a message
-  Promise.all(arr.map(url =>
-    fetch(url).then(resp => resp.json())
-  )).then(obj => {
-    console.log(obj)
-  })
+  window.onload = () => {
+    // don't redirect if the subreddit isn't private OR a comment page
+    if (!isCommentPage() || !isPrivate()) return;
 
-  window.location.href = `https://web.archive.org/web/2/${window.location.href}`;
-};
-
-
-// Entry point
-window.onload = _ => start();
+    window.location.href = latestURL;
+  };
+});

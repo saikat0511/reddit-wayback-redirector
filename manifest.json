@@ -2,7 +2,8 @@
    "content_scripts": [
       {
          "matches": [ "https://*.reddit.com/r/*" ],
-         "js": [ "scripts/content.js" ]
+         "js": [ "scripts/content.js" ],
+         "run_at": "document_start"
       }
    ],
    "manifest_version": 3,
