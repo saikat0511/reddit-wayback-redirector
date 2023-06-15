@@ -16,7 +16,11 @@ const getDesign = () => {
 
 const isPrivate = () => {
   let design = getDesign();
-  if (design === 'old' || design === 'new1') {
+  if (design === 'old') {
+    if (document.querySelector('.interstitial') === null) {
+      return false
+    } else return true;
+  } else if (design === 'new1') {
     if (document.querySelector('h3') === null) {
       return false
     } else return true;
