@@ -53,6 +53,8 @@ Promise.all(urlArr.map(url =>
     // don't redirect if the subreddit isn't private OR a comment page
     if (!isCommentPage() || !isPrivate()) return;
 
+    // dont redirect if page not available on wayback machine
+    if (latestURL === '') return;
     window.location.href = latestURL;
   };
 });
