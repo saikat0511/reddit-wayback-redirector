@@ -1,0 +1,13 @@
+{
+   "content_scripts": [
+      {
+         "matches": [ "https://*.reddit.com/r/*" ],
+         "js": [ "scripts/content.js" ]
+      }
+   ],
+   "manifest_version": 3,
+   "name": "Reddit Wayback Machine Redirector",
+   "short_name": "Reddit Wayback Redirector",
+   "version": "1.0.0",
+   "description": "Automatically redirects you to wayback machine if subreddit is private."
+}
