@@ -21,6 +21,7 @@
  border-top: none;
  border-radius: 0 0 1.5rem 1.5rem;
  padding: 2rem 1rem;
+ font-family: sans-serif;
  transition: all .5s ease;
 }
 

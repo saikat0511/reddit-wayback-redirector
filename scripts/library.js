@@ -26,12 +26,12 @@ const isPrivate = () => {
   console.log(design);
   if (design === 'old') {
     if (document.querySelector('.interstitial') === null) {
-      return false
+      return false;
     } else return true;
   } else if (design === 'new1') {
-    if (document.querySelector('h3') === null) {
-      return false
-    } else return true;
+    if (document.querySelector('h3').textContent.includes('is a private community')) {
+      return true;
+    } else return false;
   } else if (design === 'new2') {
     if (document.querySelector('private-community-modal') === null) {
       return false;
@@ -49,7 +49,7 @@ const insertRedirectBanner = () => {
       <div class="bannerSubHeading"></div>
     </div
   `;
-  document.body.prepend(backdrop);
+  document.documentElement.prepend(backdrop);
 }
 
 
