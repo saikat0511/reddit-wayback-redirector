@@ -14,8 +14,7 @@
       "128": "images/128.png"
    },
    "manifest_version": 3,
-   "name": "Reddit Wayback Machine Redirector",
-   "short_name": "Reddit Wayback Redirector",
-   "version": "1.0.0",
+   "name": "Reddit Wayback Redirector",
+   "version": "1.1.0",
    "description": "Automatically redirects you to wayback machine if subreddit is private."
 }
