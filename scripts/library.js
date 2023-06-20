@@ -22,6 +22,7 @@ const getDesign = () => {
 
 
 const isPrivate = () => {
+  let design = getDesign();
   console.log(design);
   if (design === 'old') {
     if (document.querySelector('.interstitial') === null) {
