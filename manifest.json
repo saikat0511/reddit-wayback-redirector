@@ -1,11 +1,11 @@
 {
   "content_scripts": [
-      {
-        "matches": [ "https://*.reddit.com/r/*" ],
-        "css": [ "styles/style.css" ],
-        "js": [ "scripts/content.js", "scripts/library.js" ],
-        "run_at": "document_start"
-      }
+    {
+      "matches": [ "https://*.reddit.com/r/*" ],
+      "css": [ "styles/style.css" ],
+      "js": [ "scripts/content.js", "scripts/library.js" ],
+      "run_at": "document_start"
+    }
   ],
   "icons": {
     "16": "images/16.png",
