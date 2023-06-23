@@ -36,7 +36,7 @@ const bodyObserver = new MutationObserver((mutations, mutationInstance) => {
 bodyObserver.observe(document.documentElement, { attributes: true, childList: true, subtree: true });
 
 
-window.onload = () => {
+window.addEventListener('load', () => {
   // don't redirect if the subreddit isn't private
   if (!isCommentPage() || !isPrivate()) return;
 
@@ -62,4 +62,4 @@ window.onload = () => {
     );
     window.location.replace(latestURL);
   }
-};
+});
