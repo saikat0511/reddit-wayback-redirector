@@ -1,0 +1,26 @@
+{
+  "content_scripts": [
+    {
+      "matches": [ "https://*.reddit.com/r/*" ],
+      "css": [ "styles/style.css" ],
+      "js": [ "scripts/content.js", "scripts/library.js" ],
+      "run_at": "document_start"
+    }
+  ],
+  "icons": {
+    "16": "images/16.png",
+    "32": "images/32.png",
+    "48": "images/48.png",
+    "128": "images/128.png"
+  },
+  "permissions": [ "https://archive.org/wayback/available" ],
+  "manifest_version": 2,
+  "name": "Reddit Wayback Redirector",
+  "version": "1.1.0",
+  "description": "Automatically redirects you to wayback machine if subreddit is private.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "redditwayback@saikat0511.addons.mozilla.org"
+    }
+  }
+}
